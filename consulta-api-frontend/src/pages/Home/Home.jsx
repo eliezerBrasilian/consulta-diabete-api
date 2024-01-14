@@ -1,3 +1,7 @@
+import 'react-toastify/dist/ReactToastify.css';
+
+import { ToastContainer, toast } from 'react-toastify';
+
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -13,8 +17,18 @@ function Home() {
         JSON.stringify(sintomasChecked),
         { headers: { 'Content-Type': 'application/json' } }
       );
+      toast('Seu resultado está pronto', {
+        type: 'success',
+      });
       setResult(response.data);
-    } catch (error) {}
+    } catch (error) {
+      var message = String(error.response.data);
+      if (message.includes('do que o minimo esperado')) {
+        toast('Você deve adicionar no mínimo 5 sntomas', {
+          type: 'error',
+        });
+      }
+    }
   }
 
   function handleChange(event) {
@@ -36,7 +50,7 @@ function Home() {
       });
     }
   }
-  console.log(sintomasChecked);
+  // console.log(sintomasChecked);
 
   return (
     <div className={styles.container}>
@@ -177,6 +191,7 @@ function Home() {
           </Link>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 }
