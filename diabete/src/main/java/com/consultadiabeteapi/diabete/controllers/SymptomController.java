@@ -34,7 +34,7 @@ public class SymptomController {
         "Respiração pesada","Excesso de apetite",
         "Formigamento/dormência","Formação de manchas escuras na pele",
         "Dor de estômago e vômitos",
-        "Infecções frequentes (epiteliais e vaginais)","Infecções frequentes (epiteliais e vaginais)",
+        "Infecções frequentes (epiteliais e vaginais)",
         "Sede excessiva","Micção frequente","Alteração frequente de humor"
         );
 
