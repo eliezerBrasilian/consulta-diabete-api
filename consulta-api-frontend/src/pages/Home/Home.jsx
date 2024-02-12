@@ -2,9 +2,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { ToastContainer, toast } from 'react-toastify';
 
-import axios from 'axios';
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
+import axios from 'axios';
 import styles from './Home.module.css';
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
   async function sendSyntoms() {
     try {
       var response = await axios.post(
-        'http://localhost:8080/symptoms',
+        'http://localhost:8080/api/symptoms/v1',
         JSON.stringify(sintomasChecked),
         { headers: { 'Content-Type': 'application/json' } }
       );
