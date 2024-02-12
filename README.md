@@ -5,7 +5,7 @@ Esta é uma API pública, onde você realiza um teste online para saber se você
 ## Rota POST para enviar seus sintomas
 
 ```bash
-symptoms
+api/symptoms/v1
 ```
 
 ## Uso, basta enviar um array com os sintomas em JSON
