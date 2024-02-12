@@ -8,8 +8,9 @@ import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 
 function Home() {
-  const [sintomasChecked, setSintomasChecked] = React.useState(new Array());
+  const [sintomasChecked, setSintomasChecked] = React.useState([]);
   const [result, setResult] = React.useState(null);
+
   async function sendSyntoms() {
     try {
       var response = await axios.post(
@@ -50,7 +51,6 @@ function Home() {
       });
     }
   }
-  // console.log(sintomasChecked);
 
   return (
     <div className={styles.container}>
@@ -115,15 +115,6 @@ function Home() {
         </div>
 
         <div className={styles.right}>
-          <div className={styles.item}>
-            <input
-              type='checkbox'
-              value='Dor de estômago e vômitos'
-              id='6'
-              onChange={handleChange}
-            />
-            <label htmlFor='6'>Dor de estômago e vômitos</label>
-          </div>
           <div className={styles.item}>
             <input
               type='checkbox'
